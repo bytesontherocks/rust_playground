@@ -1,0 +1,1 @@
+flatc -o fb/generated -r -b fb/game.fbs fb/game.json
