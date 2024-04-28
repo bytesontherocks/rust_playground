@@ -9,6 +9,8 @@ mod checksums {
         return false;
     }
     
+    // 10 digit number + the top right one being the check value. ex1 is adding all digits in the data_value
+    // and do modulo 10 to calculate the check value.
     fn calculate_checksum_ex1(f: u64) -> u64 {
         let mut checksum = 0;
         let mut value_to_checksum = f;
