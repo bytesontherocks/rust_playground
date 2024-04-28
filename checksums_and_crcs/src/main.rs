@@ -1,6 +1,15 @@
 mod checksums {
     pub fn is_checksum_valid(f: u64) -> bool {
-        let (f, check_value) = calculate_mod(f);
+        let (f, check_value) = calculate_mod(f);        
+
+        if check_value == calculate_checksum_ex1(f) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    fn calculate_checksum_ex1(f: u64) -> u64 {
         let mut checksum = 0;
         let mut value_to_checksum = f;
 
@@ -12,11 +21,7 @@ mod checksums {
 
         checksum %= 10;
 
-        if check_value == checksum {
-            return true;
-        }
-        
-        return false;
+        return checksum;
     }
 
     fn calculate_mod(f: u64) -> (u64, u64) {
